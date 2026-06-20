@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f4f8;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 28px;
+    padding: 2rem 2rem 2.2rem;
+    box-shadow: 0 20px 60px rgba(0, 20, 40, 0.10);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    color: #2c6cf0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b1b33;
+    margin-bottom: 0.2rem;
+}
+
+.sub {
+    color: #5a6e8a;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    border: 1px solid #eef3f8;
+    transition: 0.15s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.stat-card .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5a6e8a;
+    margin-bottom: 0.3rem;
+}
+
+.stat-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-card.green .stat-value {
+    color: #0f973d;
+}
+.stat-card.red .stat-value {
+    color: #d92d20;
+}
+.stat-card.blue .stat-value {
+    color: #2c6cf0;
+}
+
+/* ===== ADD SECTION ===== */
+.add-section {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #eef3f8;
+}
+
+.add-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #0b1b33;
+}
+
+.add-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 0.8rem;
+    align-items: end;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2d4a72;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid #dce4ec;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: white;
+    transition: 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2c6cf0;
+    box-shadow: 0 0 0 3px rgba(44, 108, 240, 0.08);
+}
+
+.btn-add {
+    padding: 0.6rem 1.5rem;
+    background: #0b1b33;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.15s;
+    white-space: nowrap;
+    height: 42px;
+    align-self: end;
+}
+
+.btn-add:hover {
+    background: #1f3d6a;
+    transform: scale(0.96);
+}
+
+.list-section {
+    margin-top: 0.5rem;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.list-header h3 {
+    font-size: 1.1rem;
+    color: #0b1b33;
+}
+
+.btn-clear {
+    background: transparent;
+    border: none;
+    color: #d92d20;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    border-radius: 40px;
+    transition: 0.15s;
+}
+
+.btn-clear:hover {
+    background: #fee8e6;
+}
+
+.transaction-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #8a9eb0;
+    padding: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: #fafcff;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #eef3f8;
+    transition: 0.15s;
+    animation: slideIn 0.25s ease;
+}
+
+.transaction-item:hover {
+    border-color: #dce4ec;
+    background: white;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transaction-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.transaction-icon.income {
+    background: #e3f5ea;
+}
+.transaction-icon.expense {
+    background: #fee8e6;
+}
+
+.transaction-desc {
+    font-weight: 600;
+    color: #0b1b33;
+    font-size: 0.95rem;
+}
+
+.transaction-amount {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.transaction-amount.income {
+    color: #0f973d;
+}
+.transaction-amount.expense {
+    color: #d92d20;
+}
+
+.transaction-delete {
+    background: transparent;
+    border: none;
+    color: #8a9eb0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 40px;
+    transition: 0.15s;
+}
+
+.transaction-delete:hover {
+    color: #d92d20;
+    background: #fee8e6;
+}
+
+.footer-meta {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 2px solid #eef3f8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: #3d5a7a;
+}
+
+.footer-meta .name {
+    font-weight: 600;
+}
+
+.dh-btn {
+    background: #0b1b33;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.dh-btn:hover {
+    background: #1f3d6a;
+    transform: scale(0.96);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .stat-card:last-child {
+        grid-column: span 2;
+    }
+    .add-form {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    .btn-add {
+        width: 100%;
+    }
+    .footer-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
